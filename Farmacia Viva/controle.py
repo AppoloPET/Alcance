@@ -7,46 +7,40 @@ class JanelaPrincipal:
         self.janela = janela
 
         self.botoes_principais()
-
         janela.show()
         self.app.exec()
 
     def botoes_principais(self):
-        self.janela.botao_editar.clicked.connect(self.frame_editar)
-        self.janela.botao_ler.clicked.connect(self.frame_ler)
-        self.janela.botao_escrever.clicked.connect(self.frame_escrever)
+        self.janela.botao_editar.clicked.connect(lambda: Editar(self.janela))
+        self.janela.botao_ler.clicked.connect(lambda: Ler(self.janela))
+        self.janela.botao_escrever.clicked.connect(lambda: Escrever(self.janela))
 
-    def frame_editar(self):
+
+class Editar:
+    def __init__(self, janela) -> None:
+        self.janela = janela
+
         self.janela.frame_escrever.close()
-        self.janela.frame_editar.show()
+        self.janela.frame_editar.show()  
+          
 
-    def frame_ler(self):
-        self.janela.frame_editar.close()
-        self.janela.frame_escrever.close()
+class Escrever:
+    def __init__(self, janela) -> None:
+        self.janela = janela
 
-    def frame_escrever(self):
         self.janela.frame_editar.show()
         self.janela.frame_escrever.show()
-    
-
-class FrameEditar:
-    def __init__(self) -> None:
-        pass
 
 
-class FrameEscrever:
-    def __init__(self) -> None:
-        pass
+class Ler:
+    def __init__(self, janela) -> None:
+        self.janela = janela
 
-
-class FrameLer:
-    def __init__(self) -> None:
-        pass
-
+        self.janela.frame_editar.close()
+        self.janela.frame_escrever.close() 
 
 
 JanelaPrincipal(app=QtWidgets.QApplication([]), janela=uic.loadUi("Farmacia.ui"))
-
 
 
 
