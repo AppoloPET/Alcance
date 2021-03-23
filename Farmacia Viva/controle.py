@@ -1,7 +1,7 @@
 from PyQt5  import uic, QtWidgets
 
 
-class JanelaMain:
+class JanelaPrincipal:
     def __init__(self, app, janela) -> None:
         self.app = app
         self.janela = janela
@@ -29,7 +29,23 @@ class JanelaMain:
         self.janela.frame_escrever.show()
     
 
-JanelaMain(app=QtWidgets.QApplication([]), janela=uic.loadUi("Farmacia.ui"))
+class FrameEditar:
+    def __init__(self) -> None:
+        pass
+
+
+class FrameEscrever:
+    def __init__(self) -> None:
+        pass
+
+
+class FrameLer:
+    def __init__(self) -> None:
+        pass
+
+
+
+JanelaPrincipal(app=QtWidgets.QApplication([]), janela=uic.loadUi("Farmacia.ui"))
 
 
 
