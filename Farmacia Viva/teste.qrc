@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>Labcoop_15695401935004_5861.png</file>
+    <file>Logo PET.png</file>
+    <file>Logo Farmacia Viva.png</file>
+  </qresource>
+</RCC>
